@@ -1,0 +1,51 @@
+{
+  "name": "react-gdpr",
+  "version": "0.0.1",
+  "description": "React components for Cookies settings panel, cookie banner and redux store for GDPR Compliance websites",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "npm run build-css && webpack",
+    "build-css": "node-sass --include-path scss sass/GDPRCustom.scss   css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsellam/react-gdpr.git"
+  },
+  "keywords": [
+    "gdpr",
+    "react",
+    "redux",
+    "cookies"
+  ],
+  "author": "Jérémie Sellam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsellam/react-gdpr/issues"
+  },
+  "homepage": "https://github.com/jsellam/react-gdpr#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "node-sass": "^4.9.1",
+    "webpack": "^4.15.0",
+    "webpack-cli": "^3.0.8"
+  },
+  "peerDependencies": {
+    "react": "^16.4.1"
+  },
+  "dependencies": {
+    "class-names": "^1.0.0",
+    "js-cookie": "^2.2.0",
+    "overlayscrollbars": "^1.5.0",
+    "react": "^16.4.1"
+  }
+}
