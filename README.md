@@ -1,6 +1,14 @@
 # react-gdpr
 This package provide tools and components for react to make your website gdpr compliant.
-
+## Installation
+With npm
+```
+npm install react-gdpr --save
+```
+With yarn
+```
+yarn add react-gdpr
+```
 ## Settings pannel 
 You need to wrap the GDPRSettings component to wrap it with your store.
 Exemple :
