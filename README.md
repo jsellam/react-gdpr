@@ -157,4 +157,7 @@ If you don't use SASS, you can simply import the CSS file and override default s
 ```
 import 'react-gdpr/css/main.scss'
 ```
+## Screenshot of GDPRSettings component
+The GDPRSettings component is responsive and add automatically a scrollbar if necessary.
+![Screenshot of component](https://raw.githubusercontent.com/jsellam/react-gdpr/master/doc/capture.png)
 
