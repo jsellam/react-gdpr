@@ -1,6 +1,6 @@
 {
   "name": "react-gdpr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React components for Cookies settings panel, cookie banner and redux store for GDPR Compliance websites",
   "main": "build/index.js",
   "scripts": {
