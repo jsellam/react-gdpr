@@ -1,6 +1,6 @@
 {
   "name": "react-gdpr",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "React components for Cookies settings panel, cookie banner and redux store for GDPR Compliance websites",
   "main": "build/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "start": "webpack --watch",
     "build": "npm run build-css && webpack",
     "build-css": "npm run copyscrollcss && node-sass --include-path scss sass/GDPRCustom.scss   css/main.css",
-    "copyscrollcss":"node tool/copyscrollcss.js"
+    "copyscrollcss": "node tool/copyscrollcss.js"
   },
   "repository": {
     "type": "git",
