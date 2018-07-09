@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch",
     "build": "npm run build-css && webpack",
-    "build-css": "node-sass --include-path scss sass/GDPRCustom.scss   css/main.css"
+    "build-css": "npm run copyscrollcss && node-sass --include-path scss sass/GDPRCustom.scss   css/main.css",
+    "copyscrollcss":"node tool/copyscrollcss.js"
   },
   "repository": {
     "type": "git",
