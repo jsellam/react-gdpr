@@ -1,16 +1,10 @@
-import Cookies from 'js-cookie'
+import Cookies from 'js-cookie';
 export default {
-    isActive(id)
-    {
-        return Cookies.get('gdpr-'+id) === "1"
-    },
+  isActive(id) {
+    return Cookies.get('gdpr-' + id) === '1';
+  },
 
-    setActive(id,value)
-    {
-        Cookies.set('gdpr-'+id, value ? "1" : "0", { expires: 7 });
-    }
-
-
-
-
-}
+  setActive(id, value) {
+    Cookies.set('gdpr-' + id, value ? '1' : '0', { expires: 7 });
+  }
+};

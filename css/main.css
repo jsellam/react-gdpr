@@ -3,13 +3,13 @@
  * OverlayScrollbars
  * https://github.com/KingSora/OverlayScrollbars
  *
- * Version: 1.5.0
+ * Version: 1.5.2
  *
  * Copyright KingSora.
  * https://github.com/KingSora
  *
  * Released under the MIT license.
- * Date: 21.06.2018
+ * Date: 09.09.2018
  */
   /*
 OVERLAY SCROLLBARS CORE:
@@ -462,7 +462,7 @@ THEMES:
     width: 100%;
     height: 100%; }
   .gdpr-settings .gdpr-popin {
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     position: absolute;
     width: 800px;
     height: 80%;
@@ -505,7 +505,7 @@ THEMES:
     margin-bottom: 40px; }
   .gdpr-settings .gdpr-section {
     padding-bottom: 20px;
-    border-bottom: solid 1px #CCCCCC;
+    border-bottom: solid 1px #cccccc;
     margin-bottom: 30px;
     position: relative; }
     .gdpr-settings .gdpr-section-title {
@@ -569,5 +569,7 @@ THEMES:
     text-transform: uppercase;
     font-size: 14px;
     transition: background-color 0.3s; }
+  .gdpr-settings .gdpr-button-cancel {
+    margin-left: 10px; }
   .gdpr-settings .gdpr-button:hover {
     background-color: #03DAC6; }

@@ -1,17 +1,26 @@
 # react-gdpr
+
 This package provide tools and components for react to make your website gdpr compliant.
+
 ## Installation
+
 With npm
+
 ```
 npm install react-gdpr --save
 ```
+
 With yarn
+
 ```
 yarn add react-gdpr
 ```
-## Settings pannel 
+
+## Settings pannel
+
 You need to wrap the GDPRSettings component to wrap it with your store.
 Exemple :
+
 ```
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
@@ -26,7 +35,7 @@ const mapActions = dispatch => ({
 
 const mapSelectors = state => ({
     cookiesSettings: selectors.App.cookiesSettings(state),
-   
+
 })
 
 
@@ -58,26 +67,32 @@ export default class GDPRSettingsPanel extends Component {
     }
 
     handleValidate = () =>{
-        this.props.closeCookies()
+        this.props.acceptCookies()
+        this.props.gdprModal()
+    }
+
+    handleCancel = () =>{
+        this.props.gdprModal()
     }
 
     render() {
         if (!this.allowRender) return null
         if(!this.props.cookiesSettings) return null
         let configBuilder = new GDPRConfigBuilder()
-        configBuilder.setLocale('Paramètres de conf','ceci correspond aux réglages','valider','actif','inactif','toujours actif')
+        configBuilder.setLocale('Paramètres de conf','ceci correspond aux réglages','valider','actif','inactif','toujours actif','Annuler')
         .addSetting('navigation','Cookies obligatoire','permet la navigation dans le site',true,false)
         .addSetting('analytics','Param de performance','autoriser google analytics',cookiesTool.isActive("analytics"),true)
         let config = configBuilder.getConfig()
 
         return (
         <div className="gdpr-settings-panel">
-            {true && <GDPRSettings onValidate={this.handleValidate} onToggle={this.handleToggle} {...config} />}
+            {true && <GDPRSettings onValidate={this.handleValidate} onCancel={this.handleCancel} onToggle={this.handleToggle} {...config} />}
         </div>
         )
     }
 }
 ```
+
 This sample use GDPRConfigBuilder tool to create components props (locale and cookies status)
 
 ```
@@ -87,7 +102,8 @@ let configBuilder = new GDPRConfigBuilder()
                                 'validate',
                                 'active',
                                 'inactive',
-                                'always active')
+                                'always active',
+                                'cancel')
 
         .addSetting(setting_id,
                     setting_title,
@@ -98,22 +114,25 @@ let configBuilder = new GDPRConfigBuilder()
 let config = configBuilder.getConfig()
 
  <GDPRSettings {...config} />
- ```
+```
+
 GDPRSettings dispach callback to your component :
- ```
+
+```
 handleToggle = (id,value) =>{
-    cookiesTool.setActive(id,value)
-    this.incRender()
+   cookiesTool.setActive(id,value)
+   this.incRender()
 }
 
 handleValidate = () =>{
-    this.props.closeCookies()
+   this.props.closeCookies()
 }
 
 <GDPRSettings onValidate={this.handleValidate} onToggle={this.handleToggle} {...config} />
 ```
 
-You can use cookieTool to save and load user settings 
+You can use cookieTool to save and load user settings
+
 ```
 cookiesTool.isActive(cookie_id)
 cookiesTool.setActive(cookie_id,value)
@@ -121,9 +140,10 @@ cookiesTool.setActive(cookie_id,value)
 
 If you use cookiesTool, you need to use it in your cookie banner too.
 
+## Skin your panel settings
 
-## Skin your panel settings 
-The best way is to use SASS and import the file 
+The best way is to use SASS and import the file
+
 ```
 .gdpr-settings-panel{
     $gdpr-mobile-size:800px;
@@ -137,8 +157,8 @@ The best way is to use SASS and import the file
     .gdpr-title{
         font-family: "futura-medium",Arial,sans-serif;
     }
-    
-    
+
+
     .gdpr-description{
         font-family: "raleway-regular",Arial,sans-serif;
     }
@@ -153,11 +173,14 @@ The best way is to use SASS and import the file
     }
 }
 ```
+
 If you don't use SASS, you can simply import the CSS file and override default styles.
+
 ```
 import 'react-gdpr/css/main.scss'
 ```
+
 ## Screenshot of GDPRSettings component
+
 The GDPRSettings component is responsive and add automatically a scrollbar if necessary.
 ![Screenshot of component](https://raw.githubusercontent.com/jsellam/react-gdpr/master/doc/capture.png)
-
