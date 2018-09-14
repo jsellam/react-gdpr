@@ -1,9 +1,8 @@
 {
-    "presets": ["env", "react", "stage-0"],
-    "plugins": [
-        ["transform-object-rest-spread"],
-        ["transform-react-jsx"],
-        ["transform-class-properties"]
-        
-    ]
+  "presets": ["env", "react", "stage-0"],
+  "plugins": [
+    ["transform-object-rest-spread"],
+    ["transform-react-jsx"],
+    ["transform-class-properties"]
+  ]
 }
